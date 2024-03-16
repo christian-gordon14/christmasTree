@@ -7,7 +7,7 @@
 using namespace std;
 char character(){
     char char_choice;
-    cout << "Enter a character: " << endl;
+    cout << "Enter a character: ";
     cin >> char_choice;
     if (char_choice == !"w") {
     cout << "Must be a caracter!" << endl;
@@ -17,6 +17,7 @@ char character(){
     else{
         return char_choice;
     }
+   return char_choice;
 }
 
 int width(){
@@ -31,6 +32,7 @@ int width(){
     else {
         return int_choice;
     }
+   return int_choice;
 }
 
 int height(){
@@ -48,17 +50,16 @@ int height(){
 }
 
 int design(){
-    int i, j;
+    int i, j, k;
     char Char_input = character();
     int num_width = width();
     int num_height = height();
     int vector[num_width];
     for(j = 0; j <= num_height - 1; j++){
-        for(i = 0; i <= num_width - 1; i++){
+        for(i = 0; i <= num_width - j; i++){
             vector[i] = Char_input;
             cout << static_cast<char>(vector[i]);
         }
-        
         cout << endl;
     }
     return 0;
